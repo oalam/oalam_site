@@ -209,17 +209,17 @@ import Layout from '../layouts/Layout.astro';
 <section id="profil" class="section section--alt" style="padding-top:2rem">
   <div class="container">
     <p class="section-label">À propos</p>
-    <h2 class="section-title">12 ans au service de la donnée industrielle</h2>
+    <h2 class="section-title">12 ans au service de la donnée</h2>
     <div class="profil__grid">
       <div class="profil__text">
         <p>
-          Fondateur de <strong>L'Octet à la Menthe</strong> à Die et Grenoble, j'accompagne des grands comptes (Carrefour, FDJ, IFPEN, CETIM) et des PME régionales dans leur transformation data. Mon approche associe rigueur technique — Big Data, LLM, IoT industriel — et vision stratégique orientée résultats.
+          Fondateur de <strong>L'Octet à la Menthe</strong> à Die et CTO chez <strong>Hurence SAS</strong>, j'accompagne des grands comptes (Carrefour, FDJ, IFPEN, CETIM) et des PME régionales (ESC, Adecwatts) dans leur transformation data. Mon approche associe rigueur technique — Big Data, LLM, IoT industriel — et vision stratégique orientée résultats.
         </p>
         <p>
           Membre de <strong>Minalogic</strong>, lauréat de programmes <strong>France 2030</strong>, auteur chez <strong>ENI</strong> et formateur certifié, je crois à une IA sobre, explicable et ancrée dans les réalités de terrain des PME.
         </p>
         <blockquote class="profil__quote">
-          "L'IA ne vaut que si elle s'intègre dans les processus réels, avec les femmes et les hommes qui les font vivre — pas malgré eux."
+          "L'IA ne vaut que si elle s'intègre dans les processus réels, avec les femmes et les hommes qui les font vivre — pour eux, et pas malgré eux."
         </blockquote>
       </div>
       <div class="profil__badges">
@@ -408,6 +408,11 @@ import Layout from '../layouts/Layout.astro';
           <p class="process-card__days">Jours 1–2</p>
           <p>Compréhension des enjeux business, identification des douleurs et des opportunités avec les décideurs.</p>
         </div>
+        <div class="process-card__tooltip">
+          <strong>Ce qui se passe concrètement</strong>
+          Entretien avec les décideurs (DG, DAF, DSI) pour cartographier les priorités métier, les irritants du quotidien et les opportunités où la data ou l'IA peuvent avoir un impact mesurable.
+          <span class="process-card__tooltip-out">Sortie : liste d'enjeux priorisés + périmètre validé</span>
+        </div>
       </div>
 
       <div class="process-card">
@@ -419,6 +424,11 @@ import Layout from '../layouts/Layout.astro';
           <h3>Audit patrimoine data</h3>
           <p class="process-card__days">Jours 3–4</p>
           <p>Cartographie des sources, qualité, flux et gouvernance de vos données existantes.</p>
+        </div>
+        <div class="process-card__tooltip">
+          <strong>Ce qui se passe concrètement</strong>
+          Inventaire des sources (ERP, capteurs, fichiers, APIs…), évaluation de la qualité et de l'accessibilité, détection des silos et des angles morts. Sans données fiables, pas d'IA fiable.
+          <span class="process-card__tooltip-out">Sortie : carte des données · score de maturité</span>
         </div>
       </div>
 
@@ -432,6 +442,11 @@ import Layout from '../layouts/Layout.astro';
           <p class="process-card__days">Jours 5–6</p>
           <p>Évaluation impact / faisabilité de chaque opportunité IA selon votre maturité data réelle.</p>
         </div>
+        <div class="process-card__tooltip">
+          <strong>Ce qui se passe concrètement</strong>
+          Chaque piste IA est notée sur deux axes : valeur métier attendue (gain temps, coût, risque) et faisabilité réelle (données dispo, budget, compétences). On élimine ce qui ne tient pas la route.
+          <span class="process-card__tooltip-out">Sortie : matrice impact/faisabilité · top 3 cas d'usage</span>
+        </div>
       </div>
 
       <div class="process-card">
@@ -444,18 +459,35 @@ import Layout from '../layouts/Layout.astro';
           <p class="process-card__days">Jour 7</p>
           <p>Livrable opérationnel : cas d'usage priorisés, chiffrage, plan d'action et recommandations outillage.</p>
         </div>
+        <div class="process-card__tooltip">
+          <strong>Ce qui se passe concrètement</strong>
+          Présentation orale aux décideurs + document structuré remis : cas d'usage retenus, chiffrage indicatif, plan d'action phase par phase, recommandations d'outils et de prestataires.
+          <span class="process-card__tooltip-out">Sortie : livrable PDF · plan d'action · prêt à lancer</span>
+        </div>
       </div>
     </div>
 
     <div class="process__footer">
-      <p>Livrable remis en fin de mission · Éligible aux aides Bpifrance Diag Data IA</p>
+      <p>Livrable remis en fin de mission · <span class="bpi-tooltip-trigger">Éligible aux aides Bpifrance Diag Data IA
+        <span class="bpi-tooltip">
+          <strong>Diag Data IA — aide Bpifrance</strong>
+          <span class="bpi-tooltip__body">
+            Bpifrance finance <em>50 % du coût HT</em> du diagnostic,<br>jusqu'à <em>6 000 €</em> pris en charge directement.<br><br>
+            <span class="bpi-tooltip__example">
+              Exemple concret : mission 7 j à 800 €/j&nbsp;= 5 600 € HT.<br>
+              Bpifrance règle 2 800 €, vous ne payez que <strong>2 800 €</strong>.
+            </span>
+            <span class="bpi-tooltip__footer">PME/ETI &lt; 5 000 sal. · dossier ~1 h · accord sous 2–3 semaines</span>
+          </span>
+        </span>
+      </span></p>
       <a href="#contact" class="btn btn--primary">Réserver un créneau</a>
     </div>
   </div>
 </section>
 
 
-<!-- Séparateur vague mission → expertises -->
+<!-- Séparateur vague mission → après-diag -->
 <div class="wave-sep" aria-hidden="true">
   <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 16 Q360 64 720 28 Q1080 0 1440 48 L1440 64 L0 64 Z" fill="#f0f4ee"/>
@@ -463,9 +495,61 @@ import Layout from '../layouts/Layout.astro';
 </div>
 
 <!-- ══════════════════════════════════════
+     ET APRÈS LE DIAG ?
+══════════════════════════════════════ -->
+<section class="section section--alt after-diag" style="padding-top:2rem">
+  <div class="container">
+    <p class="section-label">Et après le Diag ?</p>
+    <h2 class="section-title">La suite logique, elle aussi financée</h2>
+    <p class="section-intro">Le livrable du Diag devient la pièce maîtresse de ces dossiers. Bpifrance et France 2030 couvrent le passage à l'acte.</p>
+
+    <div class="after-diag__grid">
+
+      <div class="after-diag__card">
+        <div class="after-diag__badge">50 % financé · jusqu'à 30 000 €</div>
+        <div class="after-diag__icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 3 C16 3 8 10 8 18 a8 8 0 0 0 16 0 C24 10 16 3 16 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 22 l-3 6 M20 22 l3 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="18" r="2.5" fill="currentColor"/></svg>
+        </div>
+        <h3>Mise en œuvre d'un cas d'usage</h3>
+        <p class="after-diag__program">IA Booster — Phase 4 · Bpifrance France 2030</p>
+        <p>Accompagnement au déploiement opérationnel du cas d'usage IA prioritaire issu du Diag — intégration, recette, montée en compétence.</p>
+        <ul class="after-diag__list">
+          <li>Aide max : <strong>30 000 €</strong> (50 % de 60 000 € HT)</li>
+          <li>Prestataire référencé réseau Bpifrance</li>
+          <li>Accès en continu — pas de dossier concurrentiel</li>
+          <li>Conditions : PME/ETI, 10–2 000 sal., CA &gt; 1 M€</li>
+        </ul>
+      </div>
+
+      <div class="after-diag__card">
+        <div class="after-diag__badge after-diag__badge--alt">jusqu'à 45 % · 100 k€ → 8 M€</div>
+        <div class="after-diag__icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L20 12 L29 13.5 L22.5 20 L24 29 L16 25 L8 29 L9.5 20 L3 13.5 L12 12 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Projet IA structurant</h3>
+        <p class="after-diag__program">Pionniers de l'IA · i-Nov · France 2030</p>
+        <p>Pour les projets plus ambitieux visant un vrai produit ou service IA innovant — le Diag apporte la preuve de maturité exigée par les jurys.</p>
+        <ul class="after-diag__list">
+          <li><strong>Pionniers de l'IA</strong> : 100 k€ → 8 M€, dépôt juin 2026</li>
+          <li><strong>i-Nov</strong> : 1–5 M€, aide jusqu'à 45 %, vagues régulières</li>
+          <li>Dossier compétitif — le livrable Diag renforce le dossier</li>
+          <li>Consortium possible (partenaires industriels)</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="after-diag__note">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="vertical-align:-2px;margin-right:6px"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v4M8 5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Je peux vous accompagner sur l'ensemble de ce parcours — du dépôt Diag jusqu'à la constitution du dossier France 2030.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
      DOMAINES D'EXPERTISE
 ══════════════════════════════════════ -->
-<section id="expertises" class="section section--alt" style="padding-top:2rem">
+<section id="expertises" class="section section--alt" style="padding-top:0; border-top: 1px solid var(--border)">
   <div class="container">
     <p class="section-label">Expertises</p>
     <h2 class="section-title">Compétences techniques</h2>
@@ -475,37 +559,37 @@ import Layout from '../layouts/Layout.astro';
       <div class="expertise__group">
         <h3 class="expertise__group-title">IA & LLM</h3>
         <div class="pills">
-          <span class="pill pill--accent">RAG</span>
-          <span class="pill pill--accent">LLM (Mistral, Llama)</span>
-          <span class="pill pill--accent">NLP</span>
-          <span class="pill pill--accent">Transcription</span>
-          <span class="pill pill--accent">Agents IA</span>
+          <span class="pill pill--accent">RAG<span class="pill__tooltip">Retrieval-Augmented Generation : connecter un LLM à vos documents internes pour des réponses fiables, sourcées et sans hallucination.</span></span>
+          <span class="pill pill--accent">LLM (Mistral, Llama)<span class="pill__tooltip">Modèles open-source souverains déployables sur infra française. Zéro dépendance aux clouds US.</span></span>
+          <span class="pill pill--accent">NLP<span class="pill__tooltip">Traitement automatique du langage : extraction d'informations, classification de documents, analyse de sentiment.</span></span>
+          <span class="pill pill--accent">Transcription<span class="pill__tooltip">Retranscription audio/vidéo (Whisper), compte-rendu automatique de réunions, sous-titrage.</span></span>
+          <span class="pill pill--accent">Agents IA<span class="pill__tooltip">Systèmes autonomes capables de planifier et d'enchaîner des actions pour atteindre un objectif métier sans intervention humaine à chaque étape.</span></span>
         </div>
       </div>
       <div class="expertise__group">
         <h3 class="expertise__group-title">Data & Plateforme</h3>
         <div class="pills">
-          <span class="pill">Big Data</span>
-          <span class="pill">Streaming temps réel</span>
-          <span class="pill">Data Lake</span>
-          <span class="pill">Gouvernance données</span>
+          <span class="pill">Big Data<span class="pill__tooltip">Traitement de volumes massifs (Spark, Hadoop) pour des analyses qui dépassent les capacités d'un tableur ou d'une BDD classique.</span></span>
+          <span class="pill">Streaming temps réel<span class="pill__tooltip">Pipelines Kafka / Flink pour traiter les événements à la seconde — alertes immédiates, dashboards live, détection en continu.</span></span>
+          <span class="pill">Data Lake<span class="pill__tooltip">Centralisation de toutes vos sources (ERP, capteurs, fichiers, APIs) dans un lac structuré, interrogeable et gouverné.</span></span>
+          <span class="pill">Gouvernance données<span class="pill__tooltip">Référentiels, catalogues, droits d'accès et traçabilité : vos données deviennent un actif fiable, auditable et conforme RGPD.</span></span>
         </div>
       </div>
       <div class="expertise__group">
         <h3 class="expertise__group-title">Industrie & IoT</h3>
         <div class="pills">
-          <span class="pill">IoT industriel</span>
-          <span class="pill">Maintenance prédictive</span>
-          <span class="pill">Détection d'anomalies</span>
-          <span class="pill">Edge ML</span>
+          <span class="pill">IoT industriel<span class="pill__tooltip">Collecte et traitement des données capteurs (machines, lignes de production) pour la supervision temps réel et l'optimisation process.</span></span>
+          <span class="pill">Maintenance prédictive<span class="pill__tooltip">Anticiper les pannes avant qu'elles surviennent en analysant les signaux faibles des équipements — réduction des arrêts non planifiés.</span></span>
+          <span class="pill">Détection d'anomalies<span class="pill__tooltip">Identification automatique des dérives de process, défauts qualité ou comportements inhabituels — sans règles codées à la main.</span></span>
+          <span class="pill">Edge ML<span class="pill__tooltip">Déploiement de modèles directement sur les capteurs ou automates — inférence locale, sans dépendance réseau ni latence cloud.</span></span>
         </div>
       </div>
       <div class="expertise__group">
         <h3 class="expertise__group-title">Green & FinOps</h3>
         <div class="pills">
-          <span class="pill">Green IT</span>
-          <span class="pill">FinOps cloud</span>
-          <span class="pill">Frugalité algorithmique</span>
+          <span class="pill">Green IT<span class="pill__tooltip">Mesure et réduction de l'empreinte carbone des systèmes d'information — calcul, stockage, réseau, cycle de vie des modèles.</span></span>
+          <span class="pill">FinOps cloud<span class="pill__tooltip">Optimisation des dépenses cloud : rightsizing, réservations d'instances, détection des ressources inutilisées, gouvernance des coûts.</span></span>
+          <span class="pill">Frugalité algorithmique<span class="pill__tooltip">Choisir le modèle le plus léger qui répond au besoin — performance sans gaspillage de compute. Moins de CO₂, moins de coût.</span></span>
         </div>
       </div>
     </div>
@@ -991,12 +1075,59 @@ import Layout from '../layouts/Layout.astro';
   border-radius: var(--radius);
   padding: 1.75rem 1.5rem;
   transition: box-shadow 0.2s, transform 0.2s;
-  overflow: hidden;
 }
 
 .process-card:hover {
   box-shadow: 0 8px 32px rgba(58, 107, 71, 0.12);
   transform: translateY(-4px);
+}
+
+.process-card__tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  background: var(--text);
+  color: #fefdf8;
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  z-index: 200;
+  pointer-events: none;
+}
+
+.process-card__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 2rem;
+  border: 7px solid transparent;
+  border-top-color: var(--text);
+}
+
+.process-card__tooltip strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.process-card__tooltip-out {
+  display: block;
+  margin-top: 0.65rem;
+  padding: 0.4rem 0.65rem;
+  background: rgba(255,255,255,0.07);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.78rem;
+  color: rgba(254,253,248,0.7);
+}
+
+.process-card:hover .process-card__tooltip {
+  display: block;
 }
 
 .process-card__num {
@@ -1054,6 +1185,87 @@ import Layout from '../layouts/Layout.astro';
   font-size: 0.9rem;
 }
 
+/* ── Tooltip Bpifrance ── */
+.bpi-tooltip-trigger {
+  position: relative;
+  display: inline;
+  cursor: help;
+  border-bottom: 1px dashed var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+  white-space: normal;
+}
+
+.bpi-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 290px;
+  background: var(--text);
+  color: #fefdf8;
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  font-weight: 400;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  z-index: 200;
+  pointer-events: none;
+}
+
+.bpi-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--text);
+}
+
+.bpi-tooltip strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.bpi-tooltip em {
+  color: #a8e6ba;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.bpi-tooltip__example {
+  display: block;
+  background: rgba(255,255,255,0.07);
+  border-left: 3px solid var(--accent);
+  padding: 0.45rem 0.65rem;
+  border-radius: 0 6px 6px 0;
+  margin-top: 0.1rem;
+}
+
+.bpi-tooltip__example strong {
+  display: inline;
+  font-size: inherit;
+  color: #a8e6ba;
+  margin: 0;
+}
+
+.bpi-tooltip__footer {
+  display: block;
+  margin-top: 0.65rem;
+  font-size: 0.75rem;
+  color: rgba(254,253,248,0.55);
+}
+
+.bpi-tooltip-trigger:hover .bpi-tooltip,
+.bpi-tooltip-trigger:focus .bpi-tooltip {
+  display: block;
+}
+
 @media (max-width: 900px) {
   .process__grid { grid-template-columns: 1fr 1fr; }
 }
@@ -1061,8 +1273,122 @@ import Layout from '../layouts/Layout.astro';
 @media (max-width: 560px) {
   .process__grid { grid-template-columns: 1fr; }
   .process__footer { flex-direction: column; text-align: center; }
+  .bpi-tooltip { left: 0; transform: none; width: 260px; }
+  .bpi-tooltip::after { left: 30px; transform: none; }
 }
 
+
+/* ══ APRÈS LE DIAG ══ */
+.after-diag__grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.after-diag__card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.after-diag__card:hover {
+  box-shadow: 0 8px 32px rgba(58,107,71,0.12);
+  transform: translateY(-3px);
+}
+
+.after-diag__badge {
+  display: inline-flex;
+  align-self: flex-start;
+  background: rgba(58,107,71,0.1);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid rgba(58,107,71,0.2);
+}
+
+.after-diag__badge--alt {
+  background: rgba(232,150,90,0.1);
+  color: var(--accent);
+  border-color: rgba(232,150,90,0.25);
+}
+
+.after-diag__icon {
+  color: var(--primary);
+}
+
+.after-diag__card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.after-diag__program {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.after-diag__card > p:not(.after-diag__program) {
+  font-size: 0.88rem;
+  color: var(--text-mute);
+  line-height: 1.55;
+}
+
+.after-diag__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.after-diag__list li {
+  font-size: 0.85rem;
+  color: var(--text-mute);
+  padding-left: 1.1rem;
+  position: relative;
+  line-height: 1.45;
+}
+
+.after-diag__list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.after-diag__list li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.after-diag__note {
+  margin-top: 1.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(58,107,71,0.06);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.88rem;
+  color: var(--text-mute);
+}
+
+@media (max-width: 680px) {
+  .after-diag__grid { grid-template-columns: 1fr; }
+}
 
 /* ══ EXPERTISES ══ */
 .expertise__groups {
@@ -1085,9 +1411,11 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  overflow: visible;
 }
 
 .pill {
+  position: relative;
   background: var(--bg);
   border: 1.5px solid var(--border);
   color: var(--text);
@@ -1096,10 +1424,46 @@ import Layout from '../layouts/Layout.astro';
   padding: 0.4rem 0.9rem;
   border-radius: 50px;
   transition: background 0.15s, border-color 0.15s;
+  cursor: default;
 }
 
 .pill:hover {
   background: var(--border);
+}
+
+.pill__tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 9px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  max-width: 270px;
+  background: var(--text);
+  color: #fefdf8;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.55;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+  z-index: 300;
+  pointer-events: none;
+  white-space: normal;
+}
+
+.pill__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--text);
+}
+
+.pill:hover .pill__tooltip {
+  display: block;
 }
 
 .pill--accent {

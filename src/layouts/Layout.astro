@@ -5,9 +5,74 @@ export interface Props {
 }
 
 const {
-  title = "L'Octet à la Menthe — Consultant Data & IA",
-  description = "Consultant Data & IA indépendant en Drôme et AuRA. Diagnostic, stratégie et mise en œuvre IA frugale et souveraine pour PME et ETI.",
+  title = "L'Octet à la Menthe — Consultant Data & IA · Die, Drôme · AuRA",
+  description = "Consultant Data & IA indépendant basé à Die (Drôme). Diagnostic, stratégie et mise en œuvre IA frugale et souveraine pour PME et ETI en AuRA. Financement Bpifrance disponible.",
 } = Astro.props;
+
+const siteUrl = "https://oalam.org";
+const ogImage = `${siteUrl}/og-image.png`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      "name": "Thomas Bailet",
+      "jobTitle": "Consultant Data & IA",
+      "url": siteUrl,
+      "email": "bailet.thomas@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Die",
+        "addressRegion": "Drôme",
+        "postalCode": "26150",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        { "@type": "State", "name": "Drôme" },
+        { "@type": "State", "name": "Auvergne-Rhône-Alpes" },
+        { "@type": "Country", "name": "France" }
+      ],
+      "knowsAbout": [
+        "Intelligence artificielle", "Data Science", "LLM", "RAG",
+        "Big Data", "IoT industriel", "Maintenance prédictive",
+        "Green IT", "FinOps cloud", "Diagnostic Data IA Bpifrance"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#business`,
+      "name": "L'Octet à la Menthe",
+      "url": siteUrl,
+      "logo": `${siteUrl}/favicon.svg`,
+      "image": ogImage,
+      "description": description,
+      "founder": { "@id": `${siteUrl}/#person` },
+      "email": "bailet.thomas@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Die",
+        "addressRegion": "Drôme",
+        "postalCode": "26150",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        { "@type": "State", "name": "Drôme" },
+        { "@type": "State", "name": "Auvergne-Rhône-Alpes" },
+        { "@type": "Country", "name": "France" }
+      ],
+      "priceRange": "€€",
+      "serviceType": [
+        "Diagnostic Data IA",
+        "Conseil en Intelligence Artificielle",
+        "Architecture Data",
+        "Formation IA",
+        "Intégration LLM"
+      ]
+    }
+  ]
+};
 ---
 
 <!doctype html>
@@ -15,9 +80,38 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
+
+    <!-- SEO de base -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={siteUrl} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Thomas Bailet" />
+
+    <!-- Open Graph (LinkedIn, Facebook, WhatsApp…) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="L'Octet à la Menthe" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Données structurées JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

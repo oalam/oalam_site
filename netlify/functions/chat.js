@@ -87,6 +87,31 @@ aac.diagdataia@bpifrance.fr
 
 ---
 
+## Et après le Diag ? Les financements de la suite
+
+Le livrable du Diag Data IA sert de pièce maîtresse pour accéder aux financements suivants :
+
+### IA Booster — Phase 4 : Mise en œuvre (Bpifrance France 2030)
+- **Objet** : accompagnement au déploiement opérationnel du cas d'usage IA prioritaire identifié lors du Diag
+- **Financement** : 50 % du coût HT, aide max **30 000 €** (sur 60 000 € HT)
+- **Accès** : en continu, pas de dossier concurrentiel
+- **Éligibilité** : PME/ETI, 10 à 2 000 salariés, CA > 1 M€
+- Thomas Bailet peut être prestataire référencé réseau Bpifrance pour cette phase
+
+### Pionniers de l'IA (France 2030, Bpifrance)
+- Pour les projets IA ambitieux visant un vrai produit ou service innovant
+- Budget projet : 100 k€ → 8 M€
+- Prochaine deadline : **9 juin 2026** (relève 3)
+- Le Diag renforce considérablement le dossier en prouvant la maturité data
+
+### i-Nov (Bpifrance)
+- Pour les projets de R&D et innovation, budget 1–5 M€
+- Aide jusqu'à 45 % du coût du projet
+- Vagues régulières tout au long de l'année
+- Peut financer un projet IA issu des cas d'usage identifiés dans le Diag
+
+---
+
 ## Contact
 - Email : bailet.thomas@gmail.com
 - Localisation : Die, Drôme (26) — déplacements AuRA et national
