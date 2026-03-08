@@ -1397,6 +1397,8 @@ import Layout from '../layouts/Layout.astro';
   border: 2px solid white;
 }
 
+#chat-window[hidden] { display: none !important; }
+
 #chat-window {
   width: min(380px, calc(100vw - 2rem));
   height: min(520px, calc(100vh - 100px));
