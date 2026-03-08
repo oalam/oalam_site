@@ -10,7 +10,7 @@ const {
 } = Astro.props;
 
 const siteUrl = "https://oalam.org";
-const ogImage = `${siteUrl}/og-image.png`;
+const ogImage = `${siteUrl}/og-image.svg`;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -94,6 +94,7 @@ const jsonLd = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/svg+xml" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="fr_FR" />
