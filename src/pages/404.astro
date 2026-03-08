@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page introuvable — L'Octet à la Menthe" description="Cette page n'existe pas.">
+
+<style>
+  .notfound {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background: var(--bg);
+  }
+
+  .notfound__code {
+    font-size: clamp(6rem, 20vw, 10rem);
+    font-weight: 800;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .notfound__title {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .notfound__sub {
+    font-size: 1rem;
+    color: var(--text-mute);
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .notfound__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>
+
+<div class="notfound">
+  <p class="notfound__code">404</p>
+  <h1 class="notfound__title">Page introuvable</h1>
+  <p class="notfound__sub">
+    Cette page n'existe pas ou a été déplacée.<br />
+    Revenez à l'accueil pour reprendre votre visite.
+  </p>
+  <div class="notfound__actions">
+    <a href="/" class="btn btn--primary">Retour à l'accueil</a>
+    <a href="/#contact" class="btn btn--outline">Me contacter</a>
+  </div>
+</div>
+
+</Layout>

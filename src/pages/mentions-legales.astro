@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Mentions légales — L'Octet à la Menthe"
+  description="Mentions légales du site oalam.org — L'Octet à la Menthe, consultant Data & IA."
+  noindex={true}
+>
+
+<style>
+  .legal {
+    min-height: 100vh;
+    background: var(--bg);
+    padding: 5rem 0;
+  }
+
+  .legal__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--text-mute);
+    margin-bottom: 2.5rem;
+    transition: color 0.15s;
+  }
+  .legal__back:hover { color: var(--primary); }
+
+  .legal h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .legal__date {
+    font-size: 0.85rem;
+    color: var(--text-mute);
+    margin-bottom: 3rem;
+  }
+
+  .legal h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 2.5rem 0 0.75rem;
+  }
+
+  .legal p, .legal li {
+    font-size: 0.95rem;
+    color: var(--text-mute);
+    line-height: 1.7;
+  }
+
+  .legal ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-left: 1rem;
+  }
+
+  .legal ul li::before {
+    content: '— ';
+    color: var(--accent);
+  }
+
+  .legal a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  .legal__todo {
+    background: rgba(232,150,90,0.12);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 0.4rem;
+    display: inline-block;
+  }
+
+  .legal hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+  }
+</style>
+
+<div class="legal">
+  <div class="container">
+    <a href="/" class="legal__back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Retour à l'accueil
+    </a>
+
+    <h1>Mentions légales</h1>
+    <p class="legal__date">En vigueur au 8 mars 2026 — conformément à la loi n° 2004-575 du 21 juin 2004 (LCEN)</p>
+
+    <hr />
+
+    <h2>1. Éditeur du site</h2>
+    <ul>
+      <li>Nom commercial : <strong>L'Octet à la Menthe</strong></li>
+      <li>Entrepreneur individuel : <strong>Thomas Bailet</strong></li>
+      <li>Adresse : Die, 26150 Drôme, France</li>
+      <li>Email : <a href="mailto:bailet.thomas@gmail.com">bailet.thomas@gmail.com</a></li>
+      <li>
+        SIRET : <span class="legal__todo">49233118600030</span>
+      </li>
+    </ul>
+
+    <h2>2. Directeur de la publication</h2>
+    <p>Thomas Bailet, en qualité d'entrepreneur individuel.</p>
+
+    <h2>3. Hébergement</h2>
+    <ul>
+      <li>Hébergeur : <strong>Netlify, Inc.</strong></li>
+      <li>Adresse : 44 Montgomery Street, Suite 300, San Francisco, CA 94104, États-Unis</li>
+      <li>Site : <a href="https://www.netlify.com" target="_blank" rel="noopener">www.netlify.com</a></li>
+    </ul>
+
+    <h2>4. Propriété intellectuelle</h2>
+    <p>
+      L'ensemble du contenu de ce site (textes, illustrations, graphiques, logo) est la propriété exclusive de Thomas Bailet / L'Octet à la Menthe, sauf mention contraire. Toute reproduction, représentation ou diffusion, en tout ou partie, sur quelque support que ce soit, sans autorisation préalable écrite, est interdite.
+    </p>
+
+    <h2>5. Limitation de responsabilité</h2>
+    <p>
+      Les informations publiées sur ce site sont fournies à titre indicatif. L'éditeur s'efforce de maintenir ces informations à jour mais ne saurait être tenu responsable des erreurs ou omissions. Les tarifs et conditions présentés sont donnés à titre d'exemple et peuvent évoluer.
+    </p>
+
+    <h2>6. Liens hypertextes</h2>
+    <p>
+      Ce site peut contenir des liens vers des sites tiers. L'éditeur n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu.
+    </p>
+
+    <h2>7. Droit applicable</h2>
+    <p>
+      Le présent site est soumis au droit français. Tout litige relatif à son utilisation relève de la compétence exclusive des tribunaux français.
+    </p>
+
+    <hr />
+
+    <p>
+      Pour toute question relative à ces mentions légales, contactez :
+      <a href="mailto:bailet.thomas@gmail.com">bailet.thomas@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+</Layout>

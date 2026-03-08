@@ -1,0 +1,206 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Politique de confidentialité — L'Octet à la Menthe"
+  description="Politique de confidentialité et traitement des données personnelles — oalam.org."
+  noindex={true}
+>
+
+<style>
+  .legal {
+    min-height: 100vh;
+    background: var(--bg);
+    padding: 5rem 0;
+  }
+
+  .legal__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--text-mute);
+    margin-bottom: 2.5rem;
+    transition: color 0.15s;
+  }
+  .legal__back:hover { color: var(--primary); }
+
+  .legal h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .legal__date {
+    font-size: 0.85rem;
+    color: var(--text-mute);
+    margin-bottom: 3rem;
+  }
+
+  .legal h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 2.5rem 0 0.75rem;
+  }
+
+  .legal p, .legal li {
+    font-size: 0.95rem;
+    color: var(--text-mute);
+    line-height: 1.7;
+  }
+
+  .legal ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .legal ul li::before {
+    content: '— ';
+    color: var(--accent);
+  }
+
+  .legal a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  .legal hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+  }
+
+  .legal__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .legal__table th {
+    text-align: left;
+    padding: 0.65rem 0.9rem;
+    background: var(--bg-alt);
+    color: var(--text);
+    font-weight: 600;
+    border: 1px solid var(--border);
+  }
+
+  .legal__table td {
+    padding: 0.65rem 0.9rem;
+    color: var(--text-mute);
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+
+<div class="legal">
+  <div class="container">
+    <a href="/" class="legal__back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Retour à l'accueil
+    </a>
+
+    <h1>Politique de confidentialité</h1>
+    <p class="legal__date">En vigueur au 8 mars 2026 — conformément au Règlement (UE) 2016/679 (RGPD)</p>
+
+    <hr />
+
+    <h2>1. Responsable du traitement</h2>
+    <p>
+      <strong>Thomas Bailet</strong> — L'Octet à la Menthe<br />
+      Die, 26150 Drôme, France<br />
+      <a href="mailto:bailet.thomas@gmail.com">bailet.thomas@gmail.com</a>
+    </p>
+
+    <h2>2. Données collectées et finalités</h2>
+    <table class="legal__table">
+      <thead>
+        <tr>
+          <th>Données</th>
+          <th>Finalité</th>
+          <th>Base légale</th>
+          <th>Durée de conservation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nom, email, message (formulaire de contact)</td>
+          <td>Répondre à votre demande de contact</td>
+          <td>Intérêt légitime / consentement</td>
+          <td>3 ans après le dernier contact</td>
+        </tr>
+        <tr>
+          <td>Messages du chatbot (contenu de la conversation)</td>
+          <td>Traitement par l'IA pour générer une réponse contextuelle</td>
+          <td>Intérêt légitime</td>
+          <td>Non conservés (traitement en temps réel uniquement)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. Cookies et traceurs</h2>
+    <p>
+      Ce site n'utilise <strong>aucun cookie de suivi, analytique ou publicitaire</strong>. Aucun outil de mesure d'audience (Google Analytics, etc.) n'est installé. Aucun cookie tiers n'est déposé sur votre terminal.
+    </p>
+
+    <h2>4. Sous-traitants et transferts de données</h2>
+    <ul>
+      <li>
+        <strong>Netlify, Inc.</strong> (hébergeur) — San Francisco, USA.
+        Netlify est certifié conforme au Data Privacy Framework UE–USA.
+        Les formulaires de contact sont traités via Netlify Forms.
+      </li>
+      <li>
+        <strong>Anthropic, PBC</strong> — San Francisco, USA.
+        Les messages du chatbot sont transmis à l'API Anthropic pour générer une réponse.
+        Anthropic s'engage contractuellement à ne pas utiliser ces données pour entraîner ses modèles (politique entreprise en vigueur).
+        Aucun message n'est stocké de manière persistante par ce site.
+      </li>
+    </ul>
+    <p style="margin-top:0.75rem">Ces transferts vers des pays tiers s'appuient sur les clauses contractuelles types de la Commission européenne.</p>
+
+    <h2>5. Vos droits</h2>
+    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+    <ul>
+      <li>Droit d'accès à vos données personnelles</li>
+      <li>Droit de rectification</li>
+      <li>Droit à l'effacement («&nbsp;droit à l'oubli&nbsp;»)</li>
+      <li>Droit à la limitation du traitement</li>
+      <li>Droit d'opposition</li>
+      <li>Droit à la portabilité</li>
+    </ul>
+    <p style="margin-top:0.75rem">
+      Pour exercer ces droits, contactez :
+      <a href="mailto:bailet.thomas@gmail.com">bailet.thomas@gmail.com</a>.
+      En cas de réponse insatisfaisante, vous pouvez introduire une réclamation auprès de la
+      <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>.
+    </p>
+
+    <h2>6. Sécurité</h2>
+    <p>
+      Le site est servi exclusivement en HTTPS. Les données de formulaire sont transmises via des connexions chiffrées (TLS). Aucune donnée sensible (mot de passe, données bancaires) n'est collectée.
+    </p>
+
+    <h2>7. Modification de la présente politique</h2>
+    <p>
+      Cette politique peut être mise à jour à tout moment. La date de dernière modification est indiquée en haut de page. En cas de modification substantielle, un avis sera affiché sur le site.
+    </p>
+
+    <hr />
+
+    <p>
+      Contact DPO (délégué à la protection des données) :
+      <a href="mailto:bailet.thomas@gmail.com">bailet.thomas@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+</Layout>

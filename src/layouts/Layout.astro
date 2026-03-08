@@ -2,11 +2,13 @@
 export interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const {
   title = "L'Octet à la Menthe — Consultant Data & IA · Die, Drôme · AuRA",
   description = "Consultant Data & IA indépendant basé à Die (Drôme). Diagnostic, stratégie et mise en œuvre IA frugale et souveraine pour PME et ETI en AuRA. Financement Bpifrance disponible.",
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = "https://oalam.org";
@@ -85,8 +87,12 @@ const jsonLd = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={siteUrl} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <meta name="author" content="Thomas Bailet" />
+    <meta name="geo.region" content="FR-26" />
+    <meta name="geo.placename" content="Die, Drôme" />
+    <meta name="geo.position" content="44.7519;5.3731" />
+    <meta name="ICBM" content="44.7519, 5.3731" />
 
     <!-- Open Graph (LinkedIn, Facebook, WhatsApp…) -->
     <meta property="og:type" content="website" />

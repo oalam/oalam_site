@@ -707,23 +707,29 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
     <div class="contact__card">
-      <div class="contact__card-inner">
-        <p class="contact__card-name">L'Octet à la Menthe</p>
-        <p class="contact__card-title">Consultant Data & IA</p>
-        <p class="contact__card-co">L'Octet à la Menthe · Die, Drôme</p>
-        <div class="contact__card-sep"></div>
-        <p class="contact__card-line">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M7 4v3.5l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          Disponible mission · mars 2026
-        </p>
-        <p class="contact__card-line">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.79 1 3 2.79 3 5c0 3.25 4 8 4 8s4-4.75 4-8c0-2.21-1.79-4-4-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
-          Drôme · AuRA · Remote
-        </p>
-        <a href="mailto:bailet.thomas@gmail.com" class="btn btn--primary" style="width:100%; justify-content:center; margin-top:1.5rem;">
-          Envoyer un message
-        </a>
-      </div>
+      <form class="contact__form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p hidden><label>Ne pas remplir : <input name="bot-field" /></label></p>
+
+        <div class="contact__form-row">
+          <label class="contact__form-label" for="cf-name">Nom / société</label>
+          <input class="contact__form-input" id="cf-name" type="text" name="name" placeholder="Marie Dupont, ACME SAS" required />
+        </div>
+
+        <div class="contact__form-row">
+          <label class="contact__form-label" for="cf-email">Email</label>
+          <input class="contact__form-input" id="cf-email" type="email" name="email" placeholder="marie@acme.fr" required />
+        </div>
+
+        <div class="contact__form-row">
+          <label class="contact__form-label" for="cf-message">Votre projet en quelques mots</label>
+          <textarea class="contact__form-input contact__form-textarea" id="cf-message" name="message" rows="4" placeholder="Secteur, taille de l'entreprise, enjeu data ou IA…" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center;">
+          Envoyer le message
+        </button>
+      </form>
     </div>
   </div>
 </section>
@@ -735,7 +741,14 @@ import Layout from '../layouts/Layout.astro';
 <footer class="footer">
   <div class="container footer__inner">
     <p class="footer__logo">L'Octet à la Menthe</p>
-    <p class="footer__copy">© 2026 L'Octet à la Menthe · SIRET 123 456 789 00010 · Tous droits réservés</p>
+    <div class="footer__center">
+      <p class="footer__copy">© 2026 L'Octet à la Menthe · SIRET 49233118600030 · Tous droits réservés</p>
+      <nav class="footer__legal">
+        <a href="/mentions-legales">Mentions légales</a>
+        <span aria-hidden="true">·</span>
+        <a href="/politique-confidentialite">Politique de confidentialité</a>
+      </nav>
+    </div>
     <a href="#top" class="footer__back">↑ Haut de page</a>
   </div>
 </footer>
@@ -1632,52 +1645,60 @@ import Layout from '../layouts/Layout.astro';
   justify-content: center;
 }
 
-.contact__card-inner {
+.contact__form {
   background: var(--bg);
   border-radius: calc(var(--radius) * 1.5);
   padding: 2rem;
   width: 100%;
-  max-width: 320px;
   box-shadow: 0 16px 48px rgba(0,0,0,0.2);
-}
-
-.contact__card-name {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 0.2rem;
-}
-
-.contact__card-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 0.2rem;
-}
-
-.contact__card-co {
-  font-size: 0.85rem;
-  color: var(--text-mute);
-}
-
-.contact__card-sep {
-  height: 1px;
-  background: var(--border);
-  margin: 1.25rem 0;
-}
-
-.contact__card-line {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.88rem;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.contact__form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact__form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
   color: var(--text-mute);
-  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact__form-input {
+  font-family: var(--font);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--bg-alt);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+
+.contact__form-input:focus {
+  border-color: var(--primary);
+}
+
+.contact__form-input::placeholder {
+  color: var(--text-mute);
+  opacity: 0.6;
+}
+
+.contact__form-textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 @media (max-width: 768px) {
   .contact__inner { grid-template-columns: 1fr; }
-  .contact__card { display: none; }
 }
 
 
@@ -1700,10 +1721,31 @@ import Layout from '../layouts/Layout.astro';
   color: #fff;
 }
 
+.footer__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .footer__copy {
   font-size: 0.82rem;
   color: rgba(255,255,255,0.45);
 }
+
+.footer__legal {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+}
+
+.footer__legal a {
+  color: rgba(255,255,255,0.45);
+  transition: color 0.15s;
+}
+
+.footer__legal a:hover { color: #fff; }
 
 .footer__back {
   font-size: 0.85rem;
