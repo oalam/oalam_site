@@ -1,0 +1,142 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "L'Octet à la Menthe — Consultant Data & IA",
+  description = "Consultant Data & IA indépendant en Drôme et AuRA. Diagnostic, stratégie et mise en œuvre IA frugale et souveraine pour PME et ETI.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      /* ── Variables ── */
+      :root {
+        --bg:        #fefdf8;
+        --bg-alt:    #f0f4ee;
+        --primary:   #3a6b47;
+        --accent:    #e8965a;
+        --text:      #1e2d1f;
+        --text-mute: #5a7a5e;
+        --border:    #d4e4d0;
+        --radius:    12px;
+        --max-w:     1100px;
+        --font:      'Plus Jakarta Sans', system-ui, sans-serif;
+      }
+
+      /* ── Reset ── */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: var(--font);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── Utilitaires ── */
+      .container {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .section {
+        padding: 5rem 0;
+      }
+
+      .section--alt {
+        background: var(--bg-alt);
+      }
+
+      .section-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.75rem;
+      }
+
+      .section-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        color: var(--text);
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      .section-intro {
+        font-size: 1.1rem;
+        color: var(--text-mute);
+        max-width: 580px;
+      }
+
+      /* ── Liens ── */
+      a { color: inherit; text-decoration: none; }
+
+      /* ── Boutons ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.75rem;
+        border-radius: 50px;
+        font-family: var(--font);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.15s, box-shadow 0.15s;
+        border: none;
+      }
+
+      .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+
+      .btn--primary {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .btn--outline {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+      }
+
+      /* ── Animations entrée ── */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .fade-up {
+        opacity: 0;
+        animation: fadeUp 0.6s ease forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

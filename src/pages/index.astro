@@ -1,0 +1,1697 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+
+<!-- ══════════════════════════════════════
+     NAV FIXE
+══════════════════════════════════════ -->
+<header id="top">
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo">L'Octet à la Menthe</a>
+      <ul class="nav__links">
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#expertises">Expertises</a></li>
+        <li><a href="#contact" class="nav__cta">Contact</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Menu" onclick="document.querySelector('.nav__links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content fade-up" style="animation-delay:0.1s">
+      <p class="section-label">Drôme · AuRA · Remote</p>
+      <h1 class="hero__title">Consultant<br/><span class="hero__accent">Data & IA</span></h1>
+      <p class="hero__sub">
+        J'aide les PME et ETI à exploiter leurs données avec une IA <strong>frugale, souveraine et humaine</strong> — de l'audit initial à la feuille de route opérationnelle.
+      </p>
+      <div class="hero__tags">
+        <span class="tag">12 ans d'expérience</span>
+        <span class="tag">50+ jours de formation</span>
+        <span class="tag">Auteur ENI</span>
+      </div>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary">Parlons de votre projet</a>
+        <a href="#mission" class="btn btn--outline">Voir le processus</a>
+      </div>
+    </div>
+    <div class="hero__visual fade-up" style="animation-delay:0.3s" aria-hidden="true">
+      <!-- Illustration paysage Drôme / Diois — collines, Vercors, vignes, data overlay -->
+      <svg viewBox="0 0 440 380" xmlns="http://www.w3.org/2000/svg" class="hero__svg">
+        <defs>
+          <clipPath id="card-clip">
+            <rect x="0" y="0" width="440" height="380" rx="24"/>
+          </clipPath>
+          <!-- Gradient ciel -->
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#d4ecd4"/>
+            <stop offset="100%" stop-color="#f0f9f0"/>
+          </linearGradient>
+          <!-- Gradient montagnes -->
+          <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4a7c5a"/>
+            <stop offset="100%" stop-color="#2e5438"/>
+          </linearGradient>
+          <linearGradient id="mtn2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6aaa7e"/>
+            <stop offset="100%" stop-color="#3a6b47"/>
+          </linearGradient>
+          <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#8dc99a"/>
+            <stop offset="100%" stop-color="#5a9a6a"/>
+          </linearGradient>
+          <linearGradient id="valley" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#b8e0c0"/>
+            <stop offset="100%" stop-color="#8dc99a"/>
+          </linearGradient>
+        </defs>
+
+        <g clip-path="url(#card-clip)">
+
+          <!-- Fond ciel -->
+          <rect width="440" height="380" fill="url(#sky)"/>
+
+          <!-- Soleil levant -->
+          <circle cx="340" cy="80" r="38" fill="#f9d67a" opacity="0.55"/>
+          <circle cx="340" cy="80" r="28" fill="#f7c94a" opacity="0.7"/>
+
+          <!-- Vercors / Massif arrière-plan -->
+          <path d="M-10 220 L40 140 L80 170 L120 110 L160 145 L200 95 L240 130 L280 105 L320 138 L360 115 L400 145 L440 120 L450 220 Z"
+                fill="url(#mtn1)" opacity="0.85"/>
+
+          <!-- Neige sommet Vercors -->
+          <path d="M195 97 L200 95 L205 97 L210 110 L200 108 L190 110 Z" fill="white" opacity="0.8"/>
+          <path d="M278 107 L284 105 L290 108 L286 118 L280 116 Z" fill="white" opacity="0.75"/>
+
+          <!-- Chaîne intermédiaire -->
+          <path d="M-10 260 L30 195 L70 215 L110 185 L150 205 L200 175 L250 200 L290 180 L340 200 L390 182 L440 200 L450 260 Z"
+                fill="url(#mtn2)" opacity="0.9"/>
+
+          <!-- Colline principale gauche -->
+          <path d="M-10 310 Q60 240 140 258 Q200 265 240 285 L240 380 L-10 380 Z"
+                fill="url(#hill1)"/>
+
+          <!-- Colline droite / fond vallée Diois -->
+          <path d="M220 300 Q300 255 380 270 Q420 278 450 290 L450 380 L220 380 Z"
+                fill="url(#hill1)" opacity="0.9"/>
+
+          <!-- Fond de vallée -->
+          <path d="M100 340 Q180 308 260 318 Q330 326 420 315 L440 380 L80 380 Z"
+                fill="url(#valley)"/>
+
+          <!-- Vignes stylisées (rangées) — inspiration Clairette de Die -->
+          <g opacity="0.7">
+            <!-- Rangée 1 -->
+            <line x1="110" y1="335" x2="200" y2="328" stroke="#2e5438" stroke-width="1.5"/>
+            <line x1="110" y1="342" x2="200" y2="335" stroke="#2e5438" stroke-width="1.5"/>
+            <line x1="110" y1="349" x2="200" y2="342" stroke="#2e5438" stroke-width="1.5"/>
+            <!-- Piquets vigne -->
+            <line x1="125" y1="330" x2="125" y2="355" stroke="#5a3a1a" stroke-width="1.5" opacity="0.6"/>
+            <line x1="150" y1="328" x2="150" y2="352" stroke="#5a3a1a" stroke-width="1.5" opacity="0.6"/>
+            <line x1="175" y1="326" x2="175" y2="350" stroke="#5a3a1a" stroke-width="1.5" opacity="0.6"/>
+            <!-- Rangée 2 -->
+            <line x1="240" y1="325" x2="380" y2="318" stroke="#2e5438" stroke-width="1.5"/>
+            <line x1="240" y1="332" x2="380" y2="325" stroke="#2e5438" stroke-width="1.5"/>
+            <line x1="240" y1="339" x2="380" y2="332" stroke="#2e5438" stroke-width="1.5"/>
+            <line x1="270" y1="320" x2="270" y2="342" stroke="#5a3a1a" stroke-width="1.5" opacity="0.6"/>
+            <line x1="310" y1="318" x2="310" y2="340" stroke="#5a3a1a" stroke-width="1.5" opacity="0.6"/>
+            <line x1="350" y1="316" x2="350" y2="338" stroke="#5a3a1a" stroke-width="1.5" opacity="0.6"/>
+          </g>
+
+          <!-- Grappes de raisin stylisées -->
+          <g fill="#7b4a9e" opacity="0.55">
+            <circle cx="127" cy="325" r="3"/>
+            <circle cx="131" cy="321" r="2.5"/>
+            <circle cx="123" cy="321" r="2.5"/>
+            <circle cx="127" cy="317" r="2"/>
+          </g>
+          <g fill="#7b4a9e" opacity="0.5">
+            <circle cx="312" cy="313" r="3"/>
+            <circle cx="316" cy="309" r="2.5"/>
+            <circle cx="308" cy="309" r="2.5"/>
+            <circle cx="312" cy="305" r="2"/>
+          </g>
+
+          <!-- Rivière (la Drôme) -->
+          <path d="M-10 365 Q80 355 160 362 Q240 369 320 358 Q380 350 450 360"
+                fill="none" stroke="#7ab8d4" stroke-width="4" opacity="0.6"/>
+          <path d="M-10 370 Q80 360 160 367 Q240 374 320 363 Q380 355 450 365"
+                fill="none" stroke="#7ab8d4" stroke-width="2.5" opacity="0.35"/>
+
+          <!-- Oiseau (hirondelle stylisée) -->
+          <path d="M340 155 Q348 150 356 155 Q348 158 340 155Z" fill="#2e5438" opacity="0.6"/>
+          <path d="M372 145 Q380 140 388 145 Q380 148 372 145Z" fill="#2e5438" opacity="0.5"/>
+
+          <!-- DATA OVERLAY : nœuds et connexions flottants sur le paysage -->
+          <!-- Connexions réseau -->
+          <line x1="80" y1="170" x2="160" y2="200" stroke="#e8965a" stroke-width="1.5" opacity="0.5" stroke-dasharray="4 3"/>
+          <line x1="160" y1="200" x2="260" y2="185" stroke="#e8965a" stroke-width="1.5" opacity="0.5" stroke-dasharray="4 3"/>
+          <line x1="260" y1="185" x2="340" y2="210" stroke="#e8965a" stroke-width="1.5" opacity="0.4" stroke-dasharray="4 3"/>
+          <line x1="160" y1="200" x2="200" y2="265" stroke="#3a6b47" stroke-width="1" opacity="0.35" stroke-dasharray="3 4"/>
+          <line x1="260" y1="185" x2="290" y2="262" stroke="#3a6b47" stroke-width="1" opacity="0.35" stroke-dasharray="3 4"/>
+
+          <!-- Nœuds données -->
+          <circle cx="80" cy="170" r="7" fill="#fefdf8" stroke="#e8965a" stroke-width="2"/>
+          <circle cx="80" cy="170" r="3" fill="#e8965a"/>
+
+          <circle cx="160" cy="200" r="9" fill="#fefdf8" stroke="#3a6b47" stroke-width="2.5"/>
+          <circle cx="160" cy="200" r="4" fill="#3a6b47"/>
+
+          <circle cx="260" cy="185" r="7" fill="#fefdf8" stroke="#e8965a" stroke-width="2"/>
+          <circle cx="260" cy="185" r="3" fill="#e8965a"/>
+
+          <circle cx="340" cy="210" r="6" fill="#fefdf8" stroke="#3a6b47" stroke-width="2"/>
+          <circle cx="340" cy="210" r="2.5" fill="#3a6b47"/>
+
+          <!-- Badge "Data" central -->
+          <rect x="138" y="213" width="48" height="22" rx="11" fill="#3a6b47"/>
+          <text x="162" y="228" font-family="sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">DATA</text>
+
+          <!-- Badge "IA" -->
+          <rect x="242" y="195" width="36" height="20" rx="10" fill="#e8965a"/>
+          <text x="260" y="209" font-family="sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">IA</text>
+
+          <!-- Indicateur signal -->
+          <g opacity="0.7">
+            <circle cx="370" cy="170" r="12" fill="none" stroke="#e8965a" stroke-width="1.5" opacity="0.3"/>
+            <circle cx="370" cy="170" r="7" fill="none" stroke="#e8965a" stroke-width="1.5" opacity="0.5"/>
+            <circle cx="370" cy="170" r="3" fill="#e8965a"/>
+          </g>
+          <line x1="340" y1="210" x2="370" y2="170" stroke="#e8965a" stroke-width="1" opacity="0.3" stroke-dasharray="3 3"/>
+
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Séparateur vague hero → profil -->
+<div class="wave-sep" aria-hidden="true">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0 Q360 64 720 32 Q1080 0 1440 48 L1440 64 L0 64 Z" fill="#f0f4ee"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════
+     PROFIL / À PROPOS
+══════════════════════════════════════ -->
+<section id="profil" class="section section--alt" style="padding-top:2rem">
+  <div class="container">
+    <p class="section-label">À propos</p>
+    <h2 class="section-title">12 ans au service de la donnée industrielle</h2>
+    <div class="profil__grid">
+      <div class="profil__text">
+        <p>
+          Fondateur de <strong>L'Octet à la Menthe</strong> à Die et Grenoble, j'accompagne des grands comptes (Carrefour, FDJ, IFPEN, CETIM) et des PME régionales dans leur transformation data. Mon approche associe rigueur technique — Big Data, LLM, IoT industriel — et vision stratégique orientée résultats.
+        </p>
+        <p>
+          Membre de <strong>Minalogic</strong>, lauréat de programmes <strong>France 2030</strong>, auteur chez <strong>ENI</strong> et formateur certifié, je crois à une IA sobre, explicable et ancrée dans les réalités de terrain des PME.
+        </p>
+        <blockquote class="profil__quote">
+          "L'IA ne vaut que si elle s'intègre dans les processus réels, avec les femmes et les hommes qui les font vivre — pas malgré eux."
+        </blockquote>
+      </div>
+      <div class="profil__badges">
+
+        <!-- Minalogic : circuit + colline -->
+        <div class="badge-card">
+          <span class="badge-card__icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="b-sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4ecd4"/><stop offset="100%" stop-color="#f0f9f0"/></linearGradient>
+              </defs>
+              <rect width="48" height="48" rx="10" fill="url(#b-sky1)"/>
+              <!-- collines -->
+              <path d="M0 36 Q12 24 24 30 Q36 36 48 28 L48 48 L0 48Z" fill="#6aaa7e"/>
+              <path d="M0 42 Q12 34 24 38 Q36 42 48 36 L48 48 L0 48Z" fill="#8dc99a"/>
+              <!-- nœuds circuit -->
+              <circle cx="16" cy="20" r="3" fill="#fefdf8" stroke="#3a6b47" stroke-width="1.5"/>
+              <circle cx="32" cy="20" r="3" fill="#fefdf8" stroke="#3a6b47" stroke-width="1.5"/>
+              <circle cx="24" cy="13" r="3" fill="#e8965a"/>
+              <line x1="16" y1="20" x2="24" y2="13" stroke="#3a6b47" stroke-width="1.2"/>
+              <line x1="32" y1="20" x2="24" y2="13" stroke="#3a6b47" stroke-width="1.2"/>
+              <line x1="16" y1="20" x2="32" y2="20" stroke="#3a6b47" stroke-width="1.2" stroke-dasharray="2 2"/>
+            </svg>
+          </span>
+          <span class="badge-card__label">Minalogic</span>
+        </div>
+
+        <!-- France 2030 : soleil levant sur collines -->
+        <div class="badge-card">
+          <span class="badge-card__icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="b-sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fde9c4"/><stop offset="100%" stop-color="#f0f9f0"/></linearGradient>
+              </defs>
+              <rect width="48" height="48" rx="10" fill="url(#b-sky2)"/>
+              <!-- soleil -->
+              <circle cx="24" cy="22" r="8" fill="#f7c94a" opacity="0.8"/>
+              <circle cx="24" cy="22" r="5" fill="#f9d67a"/>
+              <!-- rayons -->
+              <line x1="24" y1="10" x2="24" y2="13" stroke="#f7c94a" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="33" y1="13" x2="31" y2="15" stroke="#f7c94a" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="36" y1="22" x2="33" y2="22" stroke="#f7c94a" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="15" y1="13" x2="17" y2="15" stroke="#f7c94a" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="22" x2="15" y2="22" stroke="#f7c94a" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- collines -->
+              <path d="M0 34 Q12 22 24 30 Q36 36 48 26 L48 48 L0 48Z" fill="#4a7c5a"/>
+              <path d="M0 40 Q14 32 28 37 Q38 41 48 35 L48 48 L0 48Z" fill="#8dc99a"/>
+            </svg>
+          </span>
+          <span class="badge-card__label">France 2030</span>
+        </div>
+
+        <!-- Auteur ENI : livre ouvert avec paysage dedans -->
+        <div class="badge-card">
+          <span class="badge-card__icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="b-sky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4ecd4"/><stop offset="100%" stop-color="#f0f9f0"/></linearGradient>
+                <clipPath id="book-clip"><path d="M7 14 Q24 11 24 11 Q24 11 41 14 L41 38 Q24 35 24 35 Q24 35 7 38 Z"/></clipPath>
+              </defs>
+              <rect width="48" height="48" rx="10" fill="url(#b-sky3)"/>
+              <!-- page gauche -->
+              <path d="M7 14 Q24 11 24 11 L24 38 Q24 38 7 41 Z" fill="#fefdf8" stroke="#d4e4d0" stroke-width="1"/>
+              <!-- page droite -->
+              <path d="M41 14 Q24 11 24 11 L24 38 Q24 38 41 41 Z" fill="#fefdf8" stroke="#d4e4d0" stroke-width="1"/>
+              <!-- paysage mini dans la page droite -->
+              <g clip-path="url(#book-clip)">
+                <path d="M24 28 Q30 20 36 24 Q40 26 41 24 L41 41 L24 38Z" fill="#6aaa7e" opacity="0.7"/>
+                <path d="M24 33 Q30 27 36 30 L41 41 L24 38Z" fill="#8dc99a" opacity="0.8"/>
+                <circle cx="33" cy="17" r="4" fill="#f7c94a" opacity="0.6"/>
+              </g>
+              <!-- dos livre -->
+              <line x1="24" y1="11" x2="24" y2="38" stroke="#d4e4d0" stroke-width="1.5"/>
+              <!-- lignes texte page gauche -->
+              <line x1="10" y1="21" x2="21" y2="20" stroke="#d4e4d0" stroke-width="1" stroke-linecap="round"/>
+              <line x1="10" y1="25" x2="21" y2="24" stroke="#d4e4d0" stroke-width="1" stroke-linecap="round"/>
+              <line x1="10" y1="29" x2="18" y2="28" stroke="#d4e4d0" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="badge-card__label">Auteur ENI</span>
+        </div>
+
+        <!-- 50+ jours formation : chemin qui serpente dans les collines -->
+        <div class="badge-card">
+          <span class="badge-card__icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="b-sky4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4ecd4"/><stop offset="100%" stop-color="#f0f9f0"/></linearGradient>
+              </defs>
+              <rect width="48" height="48" rx="10" fill="url(#b-sky4)"/>
+              <!-- montagne Vercors -->
+              <path d="M0 32 L10 16 L18 24 L26 12 L34 22 L40 16 L48 24 L48 48 L0 48Z" fill="#4a7c5a" opacity="0.85"/>
+              <!-- neige -->
+              <path d="M24 13 L26 12 L28 14 L26 15Z" fill="white" opacity="0.9"/>
+              <!-- colline avant -->
+              <path d="M0 40 Q14 30 28 36 Q38 40 48 34 L48 48 L0 48Z" fill="#8dc99a"/>
+              <!-- chemin sinueux -->
+              <path d="M6 46 Q14 40 20 43 Q28 46 34 40 Q40 35 44 38" fill="none" stroke="#e8965a" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 2"/>
+              <!-- point de départ -->
+              <circle cx="6" cy="46" r="2.5" fill="#e8965a"/>
+              <!-- point d'arrivée -->
+              <circle cx="44" cy="38" r="2.5" fill="#3a6b47"/>
+            </svg>
+          </span>
+          <span class="badge-card__label">50+ jours formation</span>
+        </div>
+
+        <!-- Drôme · AuRA : Vercors silhouette + rivière -->
+        <div class="badge-card">
+          <span class="badge-card__icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="b-sky5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8e4f0"/><stop offset="100%" stop-color="#e8f4eb"/></linearGradient>
+              </defs>
+              <rect width="48" height="48" rx="10" fill="url(#b-sky5)"/>
+              <!-- massifs -->
+              <path d="M0 34 L8 18 L14 26 L20 14 L28 24 L34 18 L42 28 L48 22 L48 48 L0 48Z" fill="#3a6b47" opacity="0.9"/>
+              <!-- neiges -->
+              <path d="M18 15 L20 14 L22 16 L20 17Z" fill="white" opacity="0.95"/>
+              <path d="M32 19 L34 18 L36 20 L34 21Z" fill="white" opacity="0.8"/>
+              <!-- vallée + colline avant -->
+              <path d="M0 42 Q12 34 24 39 Q36 43 48 37 L48 48 L0 48Z" fill="#6aaa7e"/>
+              <!-- rivière Drôme -->
+              <path d="M0 46 Q12 43 24 45 Q36 47 48 44" fill="none" stroke="#7ab8d4" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="badge-card__label">Drôme · AuRA</span>
+        </div>
+
+        <!-- IA Souveraine : feuille + nœud data -->
+        <div class="badge-card">
+          <span class="badge-card__icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="b-sky6" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4ecd4"/><stop offset="100%" stop-color="#f0f9f0"/></linearGradient>
+              </defs>
+              <rect width="48" height="48" rx="10" fill="url(#b-sky6)"/>
+              <!-- collines basses -->
+              <path d="M0 38 Q12 28 24 34 Q36 38 48 30 L48 48 L0 48Z" fill="#6aaa7e" opacity="0.6"/>
+              <path d="M0 43 Q14 36 28 40 Q38 43 48 38 L48 48 L0 48Z" fill="#8dc99a" opacity="0.7"/>
+              <!-- feuille stylisée -->
+              <path d="M24 10 C30 14 34 22 28 30 C22 36 14 32 12 24 C10 16 18 6 24 10Z" fill="#3a6b47" opacity="0.85"/>
+              <line x1="24" y1="10" x2="20" y2="30" stroke="#fefdf8" stroke-width="1.2" stroke-linecap="round"/>
+              <!-- nœud data sur la feuille -->
+              <circle cx="24" cy="20" r="5" fill="#fefdf8" stroke="#e8965a" stroke-width="2"/>
+              <circle cx="24" cy="20" r="2" fill="#e8965a"/>
+              <!-- connexions rayonnantes -->
+              <line x1="24" y1="15" x2="24" y2="12" stroke="#e8965a" stroke-width="1" opacity="0.6"/>
+              <line x1="29" y1="20" x2="32" y2="20" stroke="#e8965a" stroke-width="1" opacity="0.6"/>
+              <line x1="19" y1="20" x2="16" y2="20" stroke="#e8965a" stroke-width="1" opacity="0.6"/>
+            </svg>
+          </span>
+          <span class="badge-card__label">IA Souveraine</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Séparateur vague profil → mission -->
+<div class="wave-sep wave-sep--flip" aria-hidden="true">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 48 Q360 0 720 32 Q1080 64 1440 16 L1440 64 L0 64 Z" fill="#fefdf8"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════
+     PROCESSUS DE MISSION
+══════════════════════════════════════ -->
+<section id="mission" class="section" style="padding-top:2rem">
+  <div class="container">
+    <p class="section-label">Processus</p>
+    <h2 class="section-title">Diag Data IA — 7 jours pour voir clair</h2>
+    <p class="section-intro">Un diagnostic structuré qui transforme votre réalité terrain en feuille de route concrète et priorisée.</p>
+
+    <div class="process__grid">
+      <div class="process-card">
+        <div class="process-card__num">01</div>
+        <div class="process-card__content">
+          <div class="process-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="2"/><path d="M9 14h10M14 9v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Cadrage métier</h3>
+          <p class="process-card__days">Jours 1–2</p>
+          <p>Compréhension des enjeux business, identification des douleurs et des opportunités avec les décideurs.</p>
+        </div>
+      </div>
+
+      <div class="process-card">
+        <div class="process-card__num">02</div>
+        <div class="process-card__content">
+          <div class="process-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" rx="4" stroke="currentColor" stroke-width="2"/><path d="M7 14h4l3-5 3 8 3-3h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Audit patrimoine data</h3>
+          <p class="process-card__days">Jours 3–4</p>
+          <p>Cartographie des sources, qualité, flux et gouvernance de vos données existantes.</p>
+        </div>
+      </div>
+
+      <div class="process-card">
+        <div class="process-card__num">03</div>
+        <div class="process-card__content">
+          <div class="process-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2l3.5 8.5H26l-7 5 2.5 8.5L14 19l-7.5 5L9 15.5l-7-5h8.5L14 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Scoring des cas d'usage</h3>
+          <p class="process-card__days">Jours 5–6</p>
+          <p>Évaluation impact / faisabilité de chaque opportunité IA selon votre maturité data réelle.</p>
+        </div>
+      </div>
+
+      <div class="process-card">
+        <div class="process-card__num">04</div>
+        <div class="process-card__content">
+          <div class="process-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 20l6-6 4 4 10-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 24h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Restitution & feuille de route</h3>
+          <p class="process-card__days">Jour 7</p>
+          <p>Livrable opérationnel : cas d'usage priorisés, chiffrage, plan d'action et recommandations outillage.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="process__footer">
+      <p>Livrable remis en fin de mission · Éligible aux aides Bpifrance Diag Data IA</p>
+      <a href="#contact" class="btn btn--primary">Réserver un créneau</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Séparateur vague mission → expertises -->
+<div class="wave-sep" aria-hidden="true">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 16 Q360 64 720 28 Q1080 0 1440 48 L1440 64 L0 64 Z" fill="#f0f4ee"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════
+     DOMAINES D'EXPERTISE
+══════════════════════════════════════ -->
+<section id="expertises" class="section section--alt" style="padding-top:2rem">
+  <div class="container">
+    <p class="section-label">Expertises</p>
+    <h2 class="section-title">Compétences techniques</h2>
+    <p class="section-intro">Des briques technologiques maîtrisées, combinées selon votre contexte — pas de solution générique.</p>
+
+    <div class="expertise__groups">
+      <div class="expertise__group">
+        <h3 class="expertise__group-title">IA & LLM</h3>
+        <div class="pills">
+          <span class="pill pill--accent">RAG</span>
+          <span class="pill pill--accent">LLM (Mistral, Llama)</span>
+          <span class="pill pill--accent">NLP</span>
+          <span class="pill pill--accent">Transcription</span>
+          <span class="pill pill--accent">Agents IA</span>
+        </div>
+      </div>
+      <div class="expertise__group">
+        <h3 class="expertise__group-title">Data & Plateforme</h3>
+        <div class="pills">
+          <span class="pill">Big Data</span>
+          <span class="pill">Streaming temps réel</span>
+          <span class="pill">Data Lake</span>
+          <span class="pill">Gouvernance données</span>
+        </div>
+      </div>
+      <div class="expertise__group">
+        <h3 class="expertise__group-title">Industrie & IoT</h3>
+        <div class="pills">
+          <span class="pill">IoT industriel</span>
+          <span class="pill">Maintenance prédictive</span>
+          <span class="pill">Détection d'anomalies</span>
+          <span class="pill">Edge ML</span>
+        </div>
+      </div>
+      <div class="expertise__group">
+        <h3 class="expertise__group-title">Green & FinOps</h3>
+        <div class="pills">
+          <span class="pill">Green IT</span>
+          <span class="pill">FinOps cloud</span>
+          <span class="pill">Frugalité algorithmique</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Séparateur vague expertises → références -->
+<div class="wave-sep wave-sep--flip" aria-hidden="true">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 40 Q360 0 720 36 Q1080 64 1440 20 L1440 64 L0 64 Z" fill="#fefdf8"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════
+     RÉFÉRENCES CLIENTS
+══════════════════════════════════════ -->
+<section class="section" style="padding-top:2rem">
+  <div class="container">
+    <p class="section-label">Références</p>
+    <h2 class="section-title">Ils m'ont fait confiance</h2>
+
+    <div class="refs__grid">
+      <div class="ref-card">
+        <div class="ref-card__logo">AdecWatts</div>
+        <p class="ref-card__desc">Optimisation énergétique & prédiction consommation</p>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card__logo">CETIM</div>
+        <p class="ref-card__desc">IA pour l'industrie mécanique & calcul intensif</p>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card__logo">ESC</div>
+        <p class="ref-card__desc">FinOps cloud & gestion des pics d'usage</p>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card__logo">IFPEN</div>
+        <p class="ref-card__desc">Data science appliquée à l'énergie</p>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card__logo">Carrefour</div>
+        <p class="ref-card__desc">Big Data & traitement à l'échelle</p>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card__logo">FDJ</div>
+        <p class="ref-card__desc">Streaming temps réel & analyse comportementale</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ZONES & TARIFS
+══════════════════════════════════════ -->
+<section class="section section--alt">
+  <div class="container">
+    <p class="section-label">Tarifs</p>
+    <h2 class="section-title">Intervention & zones</h2>
+    <p class="section-intro">Tarifs journaliers hors taxes, transparents et modulables selon la durée de mission.</p>
+
+    <div class="tarifs__wrap">
+      <table class="tarifs__table">
+        <thead>
+          <tr>
+            <th>Zone</th>
+            <th>Périmètre</th>
+            <th>TJM indicatif</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tarif-badge tarif-badge--green">Rural / Drôme</span></td>
+            <td>Die, Crest, Valence, Drôme (présentiel)</td>
+            <td><strong>600 € / j</strong></td>
+          </tr>
+          <tr>
+            <td><span class="tarif-badge tarif-badge--blue">AuRA urbain</span></td>
+            <td>Grenoble, Lyon, Chambéry et agglomérations</td>
+            <td><strong>800 € / j</strong></td>
+          </tr>
+          <tr>
+            <td><span class="tarif-badge tarif-badge--orange">Paris / national</span></td>
+            <td>Île-de-France, déplacements longue distance</td>
+            <td><strong>1 000 € / j</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="tarifs__note">Remote disponible pour toute zone · Forfait Diag Data IA 7 jours sur devis · Éligible aides Bpifrance</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+<section id="contact" class="section contact">
+  <div class="container contact__inner">
+    <div class="contact__text">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Parlons de votre projet</h2>
+      <p>
+        Vous avez des données, des processus à optimiser, ou simplement une question sur ce que l'IA peut apporter à votre activité ? Je réponds rapidement et sans engagement.
+      </p>
+      <div class="contact__links">
+        <a href="mailto:bailet.thomas@gmail.com" class="contact__link">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          bailet.thomas@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/thomas-bailet" target="_blank" rel="noopener" class="contact__link">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M6 8.5V14M6 6v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 14v-3a2 2 0 014 0v3M10 8.5V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          linkedin.com/in/thomas-bailet
+        </a>
+      </div>
+    </div>
+    <div class="contact__card">
+      <div class="contact__card-inner">
+        <p class="contact__card-name">L'Octet à la Menthe</p>
+        <p class="contact__card-title">Consultant Data & IA</p>
+        <p class="contact__card-co">L'Octet à la Menthe · Die, Drôme</p>
+        <div class="contact__card-sep"></div>
+        <p class="contact__card-line">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M7 4v3.5l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Disponible mission · mars 2026
+        </p>
+        <p class="contact__card-line">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.79 1 3 2.79 3 5c0 3.25 4 8 4 8s4-4.75 4-8c0-2.21-1.79-4-4-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+          Drôme · AuRA · Remote
+        </p>
+        <a href="mailto:bailet.thomas@gmail.com" class="btn btn--primary" style="width:100%; justify-content:center; margin-top:1.5rem;">
+          Envoyer un message
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__logo">L'Octet à la Menthe</p>
+    <p class="footer__copy">© 2026 L'Octet à la Menthe · SIRET 123 456 789 00010 · Tous droits réservés</p>
+    <a href="#top" class="footer__back">↑ Haut de page</a>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════
+     WIDGET CHATBOT
+══════════════════════════════════════ -->
+<div id="chat-widget" aria-label="Assistant conseil">
+
+  <!-- Bouton flottant -->
+  <button id="chat-toggle" aria-label="Ouvrir l'assistant" aria-expanded="false">
+    <svg id="chat-icon-open" width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <path d="M3 4a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2H8l-5 4V4z" fill="currentColor"/>
+      <circle cx="9" cy="10" r="1.5" fill="white"/>
+      <circle cx="13" cy="10" r="1.5" fill="white"/>
+      <circle cx="17" cy="10" r="1.5" fill="white"/>
+    </svg>
+    <svg id="chat-icon-close" width="22" height="22" viewBox="0 0 22 22" fill="none" style="display:none">
+      <path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <span id="chat-badge" class="chat-badge" style="display:none"></span>
+  </button>
+
+  <!-- Fenêtre chat -->
+  <div id="chat-window" role="dialog" aria-label="Assistant conseil" hidden>
+    <div class="chat-header">
+      <div class="chat-header__avatar" aria-hidden="true">
+        <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+          <rect width="36" height="36" rx="8" fill="#3a6b47"/>
+          <!-- mini Vercors -->
+          <path d="M0 26 L6 16 L11 20 L16 12 L21 18 L26 14 L30 18 L36 14 L36 36 L0 36Z" fill="#2e5438"/>
+          <path d="M0 30 Q9 24 18 28 Q27 31 36 26 L36 36 L0 36Z" fill="#6aaa7e"/>
+          <!-- nœud IA -->
+          <circle cx="16" cy="12" r="3.5" fill="#fefdf8" stroke="#e8965a" stroke-width="1.5"/>
+          <circle cx="16" cy="12" r="1.5" fill="#e8965a"/>
+        </svg>
+      </div>
+      <div class="chat-header__info">
+        <p class="chat-header__name">Assistant conseil</p>
+        <p class="chat-header__sub">L'Octet à la Menthe · Data & IA</p>
+      </div>
+      <button class="chat-header__close" aria-label="Fermer" onclick="document.getElementById('chat-toggle').click()">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div id="chat-messages" class="chat-messages" aria-live="polite">
+      <!-- Message d'accueil injecté par JS -->
+    </div>
+
+    <div class="chat-input-row">
+      <input
+        id="chat-input"
+        type="text"
+        placeholder="Votre question…"
+        maxlength="500"
+        autocomplete="off"
+        aria-label="Message"
+      />
+      <button id="chat-send" aria-label="Envoyer">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9l14-7-5 7 5 7L2 9z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+</Layout>
+
+<style>
+
+/* ══ SÉPARATEURS VAGUE ══ */
+.wave-sep {
+  display: block;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+.wave-sep svg {
+  width: 100%;
+  height: 64px;
+  display: block;
+}
+
+/* ══ NAV ══ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(254, 253, 248, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav__logo {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.nav__links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav__links a {
+  font-weight: 500;
+  color: var(--text-mute);
+  transition: color 0.15s;
+}
+
+.nav__links a:hover { color: var(--primary); }
+
+.nav__cta {
+  background: var(--primary);
+  color: #fff !important;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  font-weight: 600 !important;
+}
+
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+@media (max-width: 680px) {
+  .nav__burger { display: flex; }
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .nav__links.open { display: flex; }
+}
+
+
+/* ══ HERO ══ */
+.hero {
+  padding-top: 120px;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 40% at 75% 55%, rgba(216,240,220,0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 80%, rgba(232,150,90,0.08) 0%, transparent 60%),
+    var(--bg);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.hero__accent {
+  color: var(--primary);
+}
+
+.hero__sub {
+  font-size: 1.15rem;
+  color: var(--text-mute);
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+}
+
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tag {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--text-mute);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 12px 48px rgba(58, 107, 71, 0.18), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+@media (max-width: 768px) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__visual { display: none; }
+}
+
+
+/* ══ PROFIL ══ */
+.profil__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 2.5rem;
+  align-items: start;
+}
+
+.profil__text p {
+  color: var(--text-mute);
+  margin-bottom: 1rem;
+}
+
+.profil__text strong { color: var(--text); }
+
+.profil__quote {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(232, 150, 90, 0.07);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.profil__badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.badge-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.badge-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.badge-card__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-card__icon svg {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.badge-card__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .profil__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ══ PROCESSUS ══ */
+.process__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.process-card {
+  position: relative;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+
+.process-card:hover {
+  box-shadow: 0 8px 32px rgba(58, 107, 71, 0.12);
+  transform: translateY(-4px);
+}
+
+.process-card__num {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--border);
+  line-height: 1;
+}
+
+.process-card__icon {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.process-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.process-card__days {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+}
+
+.process-card p:last-child {
+  font-size: 0.88rem;
+  color: var(--text-mute);
+  line-height: 1.55;
+}
+
+.process__footer {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.process__footer p {
+  color: var(--text-mute);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .process__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .process__grid { grid-template-columns: 1fr; }
+  .process__footer { flex-direction: column; text-align: center; }
+}
+
+
+/* ══ EXPERTISES ══ */
+.expertise__groups {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.expertise__group-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 0.75rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.pill:hover {
+  background: var(--border);
+}
+
+.pill--accent {
+  background: rgba(58, 107, 71, 0.08);
+  border-color: rgba(58, 107, 71, 0.25);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.pill--accent:hover {
+  background: rgba(58, 107, 71, 0.15);
+}
+
+@media (max-width: 680px) {
+  .expertise__groups { grid-template-columns: 1fr; }
+}
+
+
+/* ══ RÉFÉRENCES ══ */
+.refs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.ref-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.ref-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+.ref-card__logo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.ref-card__desc {
+  font-size: 0.88rem;
+  color: var(--text-mute);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .refs__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .refs__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ══ TARIFS ══ */
+.tarifs__wrap {
+  margin-top: 2.5rem;
+}
+
+.tarifs__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.tarifs__table th {
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+
+.tarifs__table td {
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--text-mute);
+  vertical-align: middle;
+}
+
+.tarifs__table tr:last-child td { border-bottom: none; }
+
+.tarifs__table strong { color: var(--text); font-size: 1rem; }
+
+.tarif-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.tarif-badge--green { background: rgba(58, 107, 71, 0.12); color: var(--primary); }
+.tarif-badge--blue  { background: rgba(70, 120, 180, 0.12); color: #3a5f8a; }
+.tarif-badge--orange{ background: rgba(232, 150, 90, 0.15); color: #b56c30; }
+
+.tarifs__note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-mute);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .tarifs__table { display: block; overflow-x: auto; }
+}
+
+
+/* ══ CONTACT ══ */
+.contact {
+  background: var(--primary);
+}
+
+.contact .section-label { color: rgba(255,255,255,0.6); }
+
+.contact .section-title { color: #fff; }
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.contact__text p {
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 1.5rem;
+}
+
+.contact__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.contact__link:hover { color: #fff; }
+
+.contact__link svg { flex-shrink: 0; }
+
+.contact__card {
+  display: flex;
+  justify-content: center;
+}
+
+.contact__card-inner {
+  background: var(--bg);
+  border-radius: calc(var(--radius) * 1.5);
+  padding: 2rem;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+
+.contact__card-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.contact__card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+}
+
+.contact__card-co {
+  font-size: 0.85rem;
+  color: var(--text-mute);
+}
+
+.contact__card-sep {
+  height: 1px;
+  background: var(--border);
+  margin: 1.25rem 0;
+}
+
+.contact__card-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-mute);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .contact__inner { grid-template-columns: 1fr; }
+  .contact__card { display: none; }
+}
+
+
+/* ══ FOOTER ══ */
+.footer {
+  background: var(--text);
+  padding: 2rem 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer__logo {
+  font-weight: 800;
+  color: #fff;
+}
+
+.footer__copy {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+}
+
+.footer__back {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.15s;
+}
+
+.footer__back:hover { color: #fff; }
+
+@media (max-width: 560px) {
+  .footer__inner { flex-direction: column; text-align: center; }
+}
+
+/* ══ CHATBOT WIDGET ══ */
+#chat-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+#chat-toggle {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(58,107,71,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#chat-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(58,107,71,0.45);
+}
+
+.chat-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+#chat-window {
+  width: min(380px, calc(100vw - 2rem));
+  height: min(520px, calc(100vh - 100px));
+  background: var(--bg);
+  border-radius: 18px;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  animation: chatOpen 0.25s ease;
+}
+
+@keyframes chatOpen {
+  from { opacity: 0; transform: scale(0.92) translateY(12px); transform-origin: bottom right; }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+.chat-header {
+  background: var(--primary);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chat-header__avatar {
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.chat-header__info { flex: 1; }
+
+.chat-header__name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.chat-header__sub {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.chat-header__close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.chat-header__close:hover { color: #fff; }
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  scroll-behavior: smooth;
+}
+
+.chat-messages::-webkit-scrollbar { width: 4px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+.chat-msg {
+  max-width: 85%;
+  padding: 0.65rem 0.9rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.chat-msg--bot {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-msg--user {
+  background: var(--primary);
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-msg--typing {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 0.75rem 0.9rem;
+}
+
+.chat-msg--typing span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-mute);
+  animation: typingDot 1.2s infinite;
+}
+
+.chat-msg--typing span:nth-child(2) { animation-delay: 0.2s; }
+.chat-msg--typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingDot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+#chat-input {
+  flex: 1;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  padding: 0.55rem 1rem;
+  font-family: var(--font);
+  font-size: 0.88rem;
+  color: var(--text);
+  background: var(--bg-alt);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#chat-input:focus { border-color: var(--primary); }
+
+#chat-send {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, transform 0.15s;
+}
+
+#chat-send:hover { background: #2e5438; transform: scale(1.05); }
+#chat-send:disabled { background: var(--border); cursor: not-allowed; transform: none; }
+
+</style>
+
+<script>
+  // Intersection Observer pour animations entrée
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll('.process-card, .ref-card, .badge-card, .expertise__group').forEach((el) => {
+    el.style.opacity = '0';
+    el.style.animation = 'fadeUp 0.5s ease forwards paused';
+    observer.observe(el);
+  });
+
+  // Décalage en cascade
+  document.querySelectorAll('.process-card').forEach((el, i) => {
+    el.style.animationDelay = `${i * 0.1}s`;
+  });
+
+  document.querySelectorAll('.ref-card').forEach((el, i) => {
+    el.style.animationDelay = `${i * 0.08}s`;
+  });
+</script>
+
+<script>
+// ── Chatbot widget ──
+const toggle   = document.getElementById('chat-toggle');
+const win      = document.getElementById('chat-window');
+const messages = document.getElementById('chat-messages');
+const input    = document.getElementById('chat-input');
+const sendBtn  = document.getElementById('chat-send');
+const iconOpen  = document.getElementById('chat-icon-open');
+const iconClose = document.getElementById('chat-icon-close');
+const badge     = document.getElementById('chat-badge');
+
+let history = [];
+let opened  = false;
+let greeted = false;
+
+const GREETING = "Bonjour ! Je suis l'assistant de **L'Octet à la Menthe**.\n\nJe peux vous informer sur les missions de conseil Data & IA, le financement Bpifrance **Diag Data IA**, les tarifs et zones d'intervention.\n\nComment puis-je vous aider ?";
+
+function addMsg(text, role) {
+  const div = document.createElement('div');
+  div.className = `chat-msg chat-msg--${role}`;
+  // Markdown minimal : **gras** et sauts de ligne
+  div.innerHTML = text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const div = document.createElement('div');
+  div.className = 'chat-msg chat-msg--bot chat-msg--typing';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  div.id = 'chat-typing';
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+  return div;
+}
+
+async function send() {
+  const text = input.value.trim();
+  if (!text || sendBtn.disabled) return;
+
+  input.value = '';
+  sendBtn.disabled = true;
+
+  addMsg(text, 'user');
+  history.push({ role: 'user', content: text });
+
+  const typing = addTyping();
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: history }),
+    });
+
+    typing.remove();
+
+    if (!res.ok) {
+      addMsg("Une erreur est survenue. Réessayez ou écrivez à bailet.thomas@gmail.com.", 'bot');
+      sendBtn.disabled = false;
+      return;
+    }
+
+    const data = await res.json();
+    const reply = data.reply || "Je n'ai pas pu répondre. Réessayez dans un instant.";
+    history.push({ role: 'assistant', content: reply });
+    addMsg(reply, 'bot');
+  } catch {
+    typing.remove();
+    addMsg("Erreur réseau. Vérifiez votre connexion ou écrivez à bailet.thomas@gmail.com.", 'bot');
+  }
+
+  sendBtn.disabled = false;
+  input.focus();
+}
+
+// Ouvrir / fermer
+toggle.addEventListener('click', () => {
+  opened = !opened;
+  win.hidden = !opened;
+  toggle.setAttribute('aria-expanded', String(opened));
+  iconOpen.style.display  = opened ? 'none' : '';
+  iconClose.style.display = opened ? '' : 'none';
+  badge.style.display = 'none';
+
+  if (opened && !greeted) {
+    greeted = true;
+    addMsg(GREETING, 'bot');
+    setTimeout(() => input.focus(), 100);
+  }
+});
+
+// Envoyer
+sendBtn.addEventListener('click', send);
+input.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } });
+
+// Badge de notification après 8s si non ouvert
+setTimeout(() => {
+  if (!opened) badge.style.display = 'block';
+}, 8000);
+</script>
