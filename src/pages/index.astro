@@ -707,7 +707,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
     <div class="contact__card">
-      <form class="contact__form" name="contact" method="POST" action="/merci" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form id="contact-form" class="contact__form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
         <p hidden><label>Ne pas remplir : <input name="bot-field" /></label></p>
 
@@ -730,6 +730,14 @@ import Layout from '../layouts/Layout.astro';
           Envoyer le message
         </button>
       </form>
+
+      <div id="contact-success" class="contact__success" hidden>
+        <div class="contact__success-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M8 18l7 7L28 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p class="contact__success-title">Message envoyé !</p>
+        <p class="contact__success-sub">Je vous réponds sous 24 h ouvrées.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1697,6 +1705,43 @@ import Layout from '../layouts/Layout.astro';
   min-height: 100px;
 }
 
+.contact__success {
+  background: var(--bg);
+  border-radius: calc(var(--radius) * 1.5);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.contact__success[hidden] { display: none !important; }
+
+.contact__success-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(58,107,71,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.contact__success-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.contact__success-sub {
+  font-size: 0.95rem;
+  color: var(--text-mute);
+}
+
 @media (max-width: 768px) {
   .contact__inner { grid-template-columns: 1fr; }
 }
@@ -1968,6 +2013,33 @@ import Layout from '../layouts/Layout.astro';
 #chat-send:disabled { background: var(--border); cursor: not-allowed; transform: none; }
 
 </style>
+
+<script>
+  // Formulaire de contact — soumission AJAX vers Netlify Forms
+  const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
+  const contactSuccess = document.getElementById('contact-success');
+
+  contactForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Envoi…';
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(contactForm) as any).toString(),
+      });
+      contactForm.hidden = true;
+      if (contactSuccess) contactSuccess.hidden = false;
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer le message';
+      alert('Une erreur est survenue. Merci de réessayer ou d\'écrire directement à bailet.thomas@gmail.com');
+    }
+  });
+</script>
 
 <script>
   // Intersection Observer pour animations entrée
