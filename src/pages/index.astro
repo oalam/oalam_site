@@ -472,10 +472,13 @@ import Layout from '../layouts/Layout.astro';
         <span class="bpi-tooltip">
           <strong>Diag Data IA — aide Bpifrance</strong>
           <span class="bpi-tooltip__body">
-            Bpifrance finance <em>50 % du coût HT</em> du diagnostic,<br>jusqu'à <em>6 000 €</em> pris en charge directement.<br><br>
+            Bpifrance finance <em>75 % du coût HT</em> du diagnostic.<br>Votre quote-part&nbsp;: <em>7 500 € HT</em> (forfait entreprises 10–2 000 sal.).<br><br>
             <span class="bpi-tooltip__example">
-              Exemple concret : mission 7 j à 800 €/j&nbsp;= 5 600 € HT.<br>
-              Bpifrance règle 2 800 €, vous ne payez que <strong>2 800 €</strong>.
+              Exemple concret : diagnostic valorisé 30 000 € HT.<br>
+              Bpifrance règle 22 500 €, vous ne payez que <strong>7 500 €</strong>.
+            </span>
+            <span class="bpi-tooltip__process">
+              <strong>Déroulé :</strong> souscription sur diag.bpifrance.fr → vérification éligibilité (1–20 j) → contrat bipartite signé via Yousign → expert affecté par Bpifrance selon compétences et proximité géographique.
             </span>
             <span class="bpi-tooltip__footer">PME/ETI &lt; 5 000 sal. · dossier ~1 h · accord sous 2–3 semaines</span>
           </span>
@@ -1273,6 +1276,14 @@ import Layout from '../layouts/Layout.astro';
   font-size: inherit;
   color: #a8e6ba;
   margin: 0;
+}
+
+.bpi-tooltip__process {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 0.6rem;
+  line-height: 1.45;
 }
 
 .bpi-tooltip__footer {
